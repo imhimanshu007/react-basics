@@ -1,4 +1,6 @@
 import { Component } from "react";
+import "./card-list.styles.css";
+import Card from "../card/card.component";
 
 class CardList extends Component {
   render() {
@@ -8,10 +10,10 @@ class CardList extends Component {
     //console.log(filtertedList);
 
     return (
-      <div>
-        {filteredList.map((ele) => (
-          <h1 key={ele.id}>{ele.name}</h1>
-        ))}
+      <div className="card-list">
+        {filteredList.map((monster) => {
+          return <Card monster={monster} />;
+        })}
       </div>
     );
   }
